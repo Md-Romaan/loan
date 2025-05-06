@@ -36,6 +36,12 @@ const About = () => {
                         secondary="Enables seamless navigation across different pages in the app without reloading the browser."
                     />
                 </ListItem>
+                <ListItem>
+                    <ListItemText
+                        primary="Redux Toolkit"
+                        secondary="Redux Toolkit offers a more intuitive and streamlined approach to Redux, reducing the amount of code you need to write and making it easier to manage state in your applications. It also promotes better coding practices and helps you avoid common Redux pitfalls.  "
+                    />
+                </ListItem>
             </List>
 
             <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>

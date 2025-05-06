@@ -2,14 +2,26 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Button } from '@mui/material'
+import { Button, createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import { createBrowserRouter, NavLink, RouterProvider } from 'react-router'
 import Layout from './pages/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
 import ExchangeRates from './pages/ExchangeRates'
+import { useSelector } from 'react-redux'
 
 function App() {
+
+  let mode = useSelector(state => state.util.mode);
+
+  console.log({ mode });
+
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
 
   const router = createBrowserRouter([
     {
@@ -43,7 +55,11 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router} />
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </>
   )
 }

@@ -3,11 +3,15 @@ import { NavLink, useNavigate } from 'react-router'
 import './navbar.css'
 import { Box, Button, Drawer, List, ListItem, ListItemButton, ListItemText, Switch } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useDispatch } from 'react-redux';
+import { toggleMode } from '../redux/utilSlice';
 
 const Navbar = () => {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const [checked, setChecked] = useState(false);
+
 
     const [open, setOpen] = useState(false);
 
@@ -19,21 +23,10 @@ const Navbar = () => {
     const handleChange = (e) => {
         setChecked(e.target.checked);
         if (e.target.checked) {
-            localStorage.setItem("mode", "dark")
-            document.body.style.backgroundColor = "#021526"
-            document.body.style.color = "white"
-            document.querySelector("#«r1»").style.color = "white"
-            document.querySelector("#«r2»").style.color = "white"
-            document.querySelector("#«r3»").style.color = "white"
-            document.querySelector("#«r1»").style.border = "2px solid white"
-            document.querySelector("#«r2»").style.border = "2px solid white"
-            document.querySelector("#«r3»").style.border = "2px solid white"
-
+            dispatch(toggleMode("light"));
         }
         else {
-            localStorage.setItem("mode", "light")
-            document.body.style.backgroundColor = "white"
-            document.body.style.color = "black"
+            dispatch(toggleMode("dark"));
         }
 
     }

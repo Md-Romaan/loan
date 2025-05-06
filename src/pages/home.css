@@ -3,6 +3,13 @@
     margin: 0px 50px;
 }
 
-#result{
+#result {
     margin-top: 40px;
+}
+
+@media screen and (max-width: 700px) {
+    #container {
+        margin: 0px 5px;
+    }
+
 }

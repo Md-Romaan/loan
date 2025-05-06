@@ -30,7 +30,12 @@ function App() {
         },
         {
           path: "*",
-          element: <div>404 Not Found <Button variant='contained' onClick={() => window.location.replace("/")}>GO HOME</Button></div>,
+          element: <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100vw", height: "100vh" }}>
+            <div>
+              Something went wrong <Button variant='contained' onClick={() => window.location.replace("/")}>GO HOME</Button>
+            </div>
+          </div>
+          ,
         }
       ]
     },

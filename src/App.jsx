@@ -6,7 +6,7 @@ import { Button } from '@mui/material'
 import { createBrowserRouter, NavLink, RouterProvider } from 'react-router'
 import Layout from './pages/Layout'
 import Home from './pages/Home'
-import About from './pages/about'
+import About from './pages/About'
 import ExchangeRates from './pages/ExchangeRates'
 
 function App() {
